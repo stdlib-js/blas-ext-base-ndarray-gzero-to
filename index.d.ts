@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,26 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { typedndarray } from '@stdlib/types/ndarray';
 
 /**
-* Fill a one-dimensional ndarray with linearly spaced numeric elements which increment by `1` starting from zero.
+* Fills a one-dimensional ndarray with linearly spaced numeric elements which increment by `1` starting from zero.
 *
-* @module @stdlib/blas-ext-base-ndarray-gzero-to
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns input ndarray
 *
 * @example
 * var vector = require( '@stdlib/ndarray-vector-ctor' );
-* var gzeroTo = require( '@stdlib/blas-ext-base-ndarray-gzero-to' );
 *
 * var x = vector( [ 0.0, 0.0, 0.0, 0.0 ], 'generic' );
 * // returns <ndarray>[ 0.0, 0.0, 0.0, 0.0 ]
@@ -33,12 +43,9 @@
 * var out = gzeroTo( [ x ] );
 * // returns <ndarray>[ 0.0, 1.0, 2.0, 3.0 ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function gzeroTo<T extends typedndarray<unknown> = typedndarray<unknown>>( arrays: [ T ] ): T;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = gzeroTo;
